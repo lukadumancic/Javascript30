@@ -9,4 +9,7 @@
 # TODO LIST
 
 - [x] JavaScript Drum Kit
-- [ ] JS and CSS Clock
+- [X] JS and CSS Clock
+- [ ] CSS Variables
+- [ ] Array Cardio Day 1
+- [ ] Flex Panel Gallery
