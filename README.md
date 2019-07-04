@@ -10,6 +10,6 @@
 
 - [x] JavaScript Drum Kit
 - [X] JS and CSS Clock
-- [ ] CSS Variables
+- [X] CSS Variables
 - [ ] Array Cardio Day 1
 - [ ] Flex Panel Gallery
