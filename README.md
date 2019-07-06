@@ -1,10 +1,8 @@
 # Javascript30
 30 day JS challenge 
 
-# Final task
-- [ ] Create React app that routes every task
-- [ ] Live edit of every index.js file
-- [ ] Host on heroku
+See examples on [Link](https://static-example-3hqijplmb.now.sh)
+
 
 # TODO LIST
 

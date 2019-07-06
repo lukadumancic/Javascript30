@@ -1,39 +1,26 @@
 <!DOCTYPE html>
 <html>
   <script>
-    let url ='01 - JavaScript Drum Kit';
-    function includeFiles() {
-      const elName = 'file';
+    function includeFiles(url) {
       var z, i, elmnt, file, xhttp;
-      z = document.getElementsByTagName('*');
-      for (i = 0; i < z.length; i++) {
-        elmnt = z[i];
-        file = elmnt.getAttribute(elName);
-        if (file) {
-          /*make an HTTP request using the attribute value as the file name:*/
-          xhttp = new XMLHttpRequest();
-          xhttp.onreadystatechange = function() {
-            console.log(this.responseText);
-            if (this.readyState == 4) {
-              if (this.status == 200) {
-                console.log(this.responseText);
-                elmnt.innerHTML = this.responseText;
-                getScript();
-              }
-              if (this.status == 404) {
-                elmnt.innerHTML = 'Page not found.';
-              }
-              /*remove the attribute, and call this function once more:*/
-              elmnt.removeAttribute(elName);
-              includeFiles();
-            }
-          };
-          xhttp.open('GET', url+'/index.js', true);
-          xhttp.send();
-          /*exit the function:*/
-          return;
+      z = document.getElementById('script');
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        console.log(this.responseText);
+        if (this.readyState == 4) {
+          if (this.status == 200) {
+            z.innerHTML = this.responseText;
+            getScript();
+          }
+          if (this.status == 404) {
+            elmnt.innerHTML = 'Page not found.';
+          }
         }
-      }
+      };
+      xhttp.open('GET', url + '/index.js', true);
+      xhttp.send();
+      /*exit the function:*/
+      return;
     }
   </script>
 
@@ -46,17 +33,24 @@
         src=""
         onload="getScript()"
       ></iframe>
-      <textarea id="script" file="1">
-      </textarea>
+      <textarea id="script" file="1"> </textarea>
     </div>
     <button onclick="refresh()">RUN</button>
     <div>
-        <button onclick="show('01 - JavaScript Drum Kit')">01 - JavaScript Drum Kit</button>
-        <button onclick="show('02 - JS and CSS Clock')">02 - JS and CSS Clock</button>
-        <button onclick="show('03 - CSS Variables')">03 - CSS Variables</button>
-        <button onclick="show('04 - Array Cardio Day 1')">04 - Array Cardio Day 1</button>
+      <button onclick="show('01 - JavaScript Drum Kit')">
+        01 - JavaScript Drum Kit
+      </button>
+      <button onclick="show('02 - JS and CSS Clock')">
+        02 - JS and CSS Clock
+      </button>
+      <button onclick="show('03 - CSS Variables')">03 - CSS Variables</button>
+      <button onclick="show('04 - Array Cardio Day 1')">
+        04 - Array Cardio Day 1
+      </button>
+      <button onclick="show('05 - Flex Panel Gallery')">
+        05 - Flex Panel Gallery
+      </button>
     </div>
-    
 
     <script>
       includeFiles();
@@ -78,16 +72,16 @@
       }
       function show(newUrl) {
         el = document.getElementsByClassName('inline')[0];
-        el.style.display='block';
+        el.style.display = 'block';
         url = newUrl;
         var s = document.getElementById('script');
-        s.file = url+'/index.js';
-        refresh(); 
-        includeFiles();
+        s.file = url + '/index.js';
+        includeFiles(newUrl);
+        refresh();
       }
       function refresh() {
         var iframe = document.getElementById('html');
-        iframe.src = url+'/index.html';
+        iframe.src = url + '/index.html';
       }
     </script>
 
