@@ -9,5 +9,6 @@ See examples on [Link](https://static-example-3hqijplmb.now.sh)
 - [x] JavaScript Drum Kit
 - [X] JS and CSS Clock
 - [X] CSS Variables
-- [ ] Array Cardio Day 1
-- [ ] Flex Panel Gallery
+- [X] Array Cardio Day 1
+- [X] Flex Panel Gallery
+- [ ] Type Ahead
